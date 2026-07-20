@@ -45,7 +45,7 @@
       <p class="hero-copy">We help families preserve photos, slides, negatives, videotapes, and other treasured memories before they're lost to time.</p>
       <p class="tagline">Preserving Family Memories for Future Generations</p>
       <div class="hero-actions">
-        <a class="button primary" href="#contact">Schedule a Free Consultation</a>
+        <a class="button primary" href="#contact">Request a Free Consultation</a>
         <a class="button secondary" href="#preserve">Explore What We Preserve</a>
       </div>
     </div>
@@ -199,14 +199,14 @@
         </div>
         <div class="text-note"><strong>Prefer texting?</strong> Send a text to (773) 916-7068. You can even include photos of your collection.</div>
       </div>
-      <form id="contactForm" class="contact-form">
-        <label>Name<input name="name" required></label>
+      <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="86107cd8-e979-44f2-8911-e99a8583f929"><input type="hidden" name="subject" value="New Remember Those Moments Inquiry"><input type="hidden" name="from_name" value="Remember Those Moments Website"><label>Name<input name="name" required></label>
         <label>Email<input type="email" name="email" required></label>
         <label>Phone<input type="tel" name="phone"></label>
         <label>Preferred Contact Method<select name="preferred"><option>Email</option><option>Call</option><option>Text</option></select></label>
         <label>Tell us about your project<textarea name="message" rows="6" required></textarea></label>
-        <button class="button primary" type="submit">Schedule a Free Consultation</button>
-        <p class="form-note">This preview opens your default email program to send the message.</p>
+        <button class="button primary" type="submit">Request a Free Consultation</button>
+        <p class="form-note" id="formStatus">We will respond as soon as possible.</p>
       </form>
     </div>
   </section>

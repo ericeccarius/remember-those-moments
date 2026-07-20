@@ -1,12 +1,25 @@
+
 const menuButton=document.querySelector('.menu-button');
 const nav=document.querySelector('.main-nav');
 menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));
 
-document.getElementById('contactForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const d=new FormData(e.currentTarget);
-  const subject=encodeURIComponent('Remember Those Moments consultation request');
-  const body=encodeURIComponent(`Name: ${d.get('name')}\nEmail: ${d.get('email')}\nPhone: ${d.get('phone')}\nPreferred contact: ${d.get('preferred')}\n\nProject details:\n${d.get('message')}`);
-  window.location.href=`mailto:rememberthosemoments@yahoo.com?subject=${subject}&body=${body}`;
+const form=document.getElementById('contactForm');
+const status=document.getElementById('formStatus');
+form.addEventListener('submit', async (e)=>{
+ e.preventDefault();
+ status.textContent='Sending...';
+ const data=new FormData(form);
+ try{
+   const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:data});
+   const json=await res.json();
+   if(json.success){
+      status.textContent='Thank you! Your message has been sent.';
+      form.reset();
+   } else {
+      status.textContent='There was a problem sending your message. Please call or email us.';
+   }
+ }catch(err){
+   status.textContent='There was a problem sending your message. Please call or email us.';
+ }
 });
