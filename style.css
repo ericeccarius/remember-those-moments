@@ -440,3 +440,240 @@ body{background:#fff;color:#282421}
     margin-inline:0;
   }
 }
+
+
+/* ==================================================
+   VERSION 1.2 — FAQ, upgraded footer, header refinement
+   ================================================== */
+
+/* Give the approved horizontal header logo slightly more presence. */
+@media (min-width:1121px){
+  .brand img{
+    width:320px;
+    max-height:102px;
+  }
+}
+
+/* FAQ */
+.faq-section{
+  background:linear-gradient(180deg,#ffffff,#f8f2e8);
+}
+.faq-list{
+  width:min(900px,100%);
+  margin:0 auto;
+  display:grid;
+  gap:14px;
+}
+.faq-list details{
+  background:#fff;
+  border:1px solid rgba(6,63,73,.16);
+  border-left:5px solid #f2b134;
+  border-radius:11px;
+  box-shadow:0 10px 28px rgba(12,48,53,.08);
+  overflow:hidden;
+}
+.faq-list summary{
+  list-style:none;
+  cursor:pointer;
+  position:relative;
+  padding:20px 58px 20px 22px;
+  color:#063f49;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:1.12rem;
+  font-weight:700;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{
+  content:"+";
+  position:absolute;
+  right:22px;
+  top:50%;
+  transform:translateY(-50%);
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#063f49;
+  color:#fff;
+  font:700 1.15rem Inter,Arial,sans-serif;
+}
+.faq-list details[open] summary::after{content:"–"}
+.faq-list details p{
+  margin:0;
+  padding:0 22px 22px;
+  color:#4a443e !important;
+  line-height:1.75;
+}
+.faq-list details[open] summary{
+  color:#9a5b16;
+}
+
+/* Footer modeled after the approved branding-board composition. */
+.site-footer{
+  padding:0;
+  background:linear-gradient(105deg,#032e35,#064b55);
+  border-top:4px solid #f2b134;
+  color:#fff;
+}
+.footer-main{
+  display:grid;
+  grid-template-columns:minmax(230px,1.35fr) .72fr 1fr 1.35fr;
+  gap:38px;
+  align-items:start;
+  padding-top:56px;
+  padding-bottom:38px;
+}
+.footer-brand img{
+  width:min(250px,100%);
+  margin:0 auto 20px 0;
+  filter:drop-shadow(0 14px 25px rgba(0,0,0,.3));
+}
+.footer-brand p{
+  max-width:310px;
+  color:#edf3f2 !important;
+  line-height:1.65;
+}
+.footer-signature{
+  margin:18px 0 0 !important;
+  color:#f2b134 !important;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:1.55rem;
+  font-style:italic;
+}
+.footer-brand span{
+  display:block;
+  margin-top:2px;
+  color:#d6e3e2;
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.footer-column h3{
+  margin:6px 0 16px;
+  color:#f2b134;
+  font-family:Inter,Arial,sans-serif;
+  font-size:.91rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.footer-column a{
+  display:block;
+  margin:.45rem 0;
+  color:#fff;
+  text-decoration:none;
+  line-height:1.45;
+}
+.footer-column a:hover{
+  color:#ffd176;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.footer-column p{
+  color:#edf3f2 !important;
+  line-height:1.55;
+}
+.footer-contact span{
+  color:#ffd176;
+  font-size:.84rem;
+}
+.footer-contact .footer-phone{
+  color:#fff;
+  font-size:1.28rem;
+  font-weight:800;
+}
+.footer-trust{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px 30px;
+  padding:22px 0;
+  border-top:1px solid rgba(255,255,255,.14);
+}
+.footer-trust span{
+  color:#eef5f4;
+  font-size:.86rem;
+  font-weight:700;
+}
+.footer-trust span::before{
+  content:"✓";
+  margin-right:8px;
+  color:#f2b134;
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.13);
+}
+.footer-bottom .shell{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  color:#d9e4e3;
+  font-size:.78rem;
+}
+.footer-bottom a{
+  color:#ffd176;
+  text-decoration:none;
+}
+
+@media(max-width:1000px){
+  .footer-main{
+    grid-template-columns:1.25fr 1fr 1fr;
+  }
+  .footer-brand{
+    grid-column:1/-1;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    column-gap:28px;
+    align-items:center;
+  }
+  .footer-brand img{
+    grid-row:1/5;
+    margin:0;
+  }
+}
+
+@media(max-width:720px){
+  .footer-main{
+    grid-template-columns:1fr 1fr;
+    gap:32px 24px;
+  }
+  .footer-brand{
+    grid-column:1/-1;
+    display:block;
+    text-align:center;
+  }
+  .footer-brand img{
+    margin:0 auto 18px;
+  }
+  .footer-brand p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .footer-bottom .shell{
+    padding:18px 0;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    gap:5px;
+  }
+}
+
+@media(max-width:500px){
+  .footer-main{
+    grid-template-columns:1fr;
+  }
+  .footer-column{
+    text-align:center;
+  }
+  .faq-list summary{
+    padding:18px 54px 18px 18px;
+    font-size:1rem;
+  }
+  .faq-list details p{
+    padding:0 18px 20px;
+  }
+}
