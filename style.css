@@ -583,6 +583,34 @@ body{background:#fff;color:#282421}
   font-size:1.28rem;
   font-weight:800;
 }
+.footer-column a.footer-social-link{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  width:max-content;
+  margin-top:14px;
+  padding:9px 13px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;
+  color:#fff;
+  font-weight:800;
+}
+.footer-social-link svg{
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  fill:#1877f2;
+}
+.footer-column a.footer-social-link:hover{
+  background:rgba(255,255,255,.1);
+  border-color:#ffd176;
+  color:#ffd176;
+  text-decoration:none;
+}
+.footer-column a.footer-social-link:focus-visible{
+  outline:3px solid #ffd176;
+  outline-offset:3px;
+}
 .footer-trust{
   display:flex;
   flex-wrap:wrap;
