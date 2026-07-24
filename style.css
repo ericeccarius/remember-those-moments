@@ -705,3 +705,27 @@ body{background:#fff;color:#282421}
     padding:0 18px 20px;
   }
 }
+
+
+/* Facebook link in the Contact section */
+.contact-details a.contact-facebook-link{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  width:max-content;
+  text-decoration:none;
+}
+.contact-facebook-link svg{
+  width:20px;
+  height:20px;
+  flex:0 0 20px;
+  fill:#1877f2;
+}
+.contact-details a.contact-facebook-link:hover{
+  text-decoration:underline;
+}
+.contact-details a.contact-facebook-link:focus-visible{
+  outline:3px solid #1877f2;
+  outline-offset:4px;
+  border-radius:4px;
+}
